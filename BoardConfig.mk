@@ -17,7 +17,7 @@
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Use the non-open-source parts, if they're present
--include vendor/ainol/elf2/BoardConfigVendor.mk
+-include vendor/icoo/icou7/BoardConfigVendor.mk
 
 # Alsa
 BOARD_USES_ALSA_AUDIO := true
@@ -27,7 +27,8 @@ BUILD_WITH_ALSA_UTILS := true
 BOARD_HAVE_BLUETOOTH := true
 
 # Sensors
-BOARD_USES_SENSOR_BMA250 :=true
+#BOARD_USES_SENSOR_BMA250 :=true
+BOARD_USES_G_SENSOR_MMA7660 :=true
 BOARD_USES_LIGHT_SENSOR := false
 BOARD_HAVE_COMPASS := false
 
@@ -76,20 +77,20 @@ TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 TARGET_BOARD_PLATFORM := meson6
-TARGET_BOOTLOADER_BOARD_NAME := g06ref
+TARGET_BOOTLOADER_BOARD_NAME := g08ref
 TARGET_NO_BOOTLOADER := true
 #TARGET_NO_KERNEL := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_SIMULATOR := false
 TARGET_PROVIDES_INIT_RC := true
 
-BOARD_EGL_CFG := device/ainol/elf2/egl.cfg
+BOARD_EGL_CFG := device/icoo/icou7/egl.cfg
 USE_OPENGL_RENDERER := true
 ENABLE_WEBGL := true
 BOARD_USE_SKIA_LCDTEXT := true
 
 # CWM
-#TARGET_RECOVERY_INITRC := device/ainol/elf2/recovery.init.rc
+#TARGET_RECOVERY_INITRC := device/icoo/icou7/recovery.init.rc
 #BOARD_HAS_NO_SELECT_BUTTON := true
 #BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 
@@ -100,7 +101,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_stora
 COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB
 
 # TWRP
-#TARGET_RECOVERY_INITRC := device/ainol/elf2/recovery.init.rc
+#TARGET_RECOVERY_INITRC := device/icoo/icou7/recovery.init.rc
 #DEVICE_RESOLUTION := 1024x600
 #TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 #RECOVERY_GRAPHICS_USE_LINELENGTH := true
@@ -110,8 +111,8 @@ COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB
 #TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 #TW_NO_REBOOT_BOOTLOADER := true
 #TW_FLASH_FROM_STORAGE := true
-TARGET_PREBUILT_KERNEL := device/ainol/elf2/kernel
+TARGET_PREBUILT_KERNEL := device/icoo/icou7/kernel
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200 rw init=/init loglevel=8
 
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/ainol/elf2/releasetools/amlogic_ota_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/icoo/icou7/releasetools/amlogic_ota_from_target_files

@@ -1,4 +1,4 @@
-android_device_ainol_elf2
+android_device_icoo_icou7
 ===========================
 
-Ainol ELF-II specific files
+ICOO ICOU7 specific files
